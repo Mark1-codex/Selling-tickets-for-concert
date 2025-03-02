@@ -1,6 +1,6 @@
 @import '/styles/reset.css';
 @import '/styles/colors.css';
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 .page-wrapper {
     background: black;
     min-height: 100vh;
@@ -66,9 +66,49 @@
     top: 13px;
     right: 18px;
 }
-.header-search-country {
-}
 .main {
+    padding-right: 115px;
+    padding-left: 115px;
+    padding-top: 100px;
 }
-.footer {
+.main-cards {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 70px;
+    row-gap: 50px;
+}
+.main-cards-card {
+    padding-bottom: 50px;
+}
+.main-cards-card-pic {
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+.main-cards-card-title {
+    font-family: "Montserrat", sans-serif;
+    color: var(--pink);
+    font-weight: 700;
+}
+.main-cards-card-data {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    color: white;
+    text-align: center;
+}
+.main-cards-card-location {
+    display: flex;
+    align-items: center;
+    column-gap: 4px;
+    justify-content: center;
+}
+.main-cards-card-location-image {
+}
+.main-cards-card-location-content {
+    font-family: "Montserrat", sans-serif;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    padding-top: 4px;
+    padding-bottom: 3px;
+    padding-left: 3px;
 }

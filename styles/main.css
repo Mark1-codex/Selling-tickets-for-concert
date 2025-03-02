@@ -26,6 +26,7 @@
     color: var(--pink);
     font-weight: 900;
     margin-bottom: 52px;
+     font-family: "Montserrat", sans-serif;
 }
 .header-search {
     display: flex;
@@ -37,6 +38,8 @@
     border-radius: 20px;
     color: white;
     background: rgba(255, 255, 255, 0.200);
+    backdrop-filter: blur(20px);
+
 }
 
 .header-search-ticket::placeholder, .header-search-country::placeholder{
@@ -76,6 +79,7 @@
     flex-wrap: wrap;
     column-gap: 70px;
     row-gap: 50px;
+    justify-content: space-between;
 }
 .main-cards-card {
     padding-bottom: 50px;
@@ -111,4 +115,62 @@
     padding-top: 4px;
     padding-bottom: 3px;
     padding-left: 3px;
+}
+
+@media (max-width:1024px){
+    .main{
+        padding-left: 85px;
+        padding-right: 85px;
+    }
+    .main-cards{
+        column-gap: 27px;
+    }
+    .main-cards-card{
+        width: 27%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .header-title{
+        font-size: 30px;
+    }
+    .header-logo{
+        width: 140px;
+    }
+    .header{
+        padding: 40px 100px 123px;
+    }
+}
+@media (max-width:768px) {
+    .header-search{
+        display: flex;
+        flex-direction: column;
+        row-gap: 25px;
+    }
+    .header, .main{
+        padding: 25px;
+    }
+    .header-search-ticket, .header-search-country{
+        width: 80vw;
+    }
+    .header-title{
+        width: auto;
+        font-size: 18px;
+    }
+    .header-logo{
+        width: 80px;
+    }
+}
+@media (max-width:600px){
+    .main-cards-card{
+        width: 45%;
+    }
+    .main-cards{
+        padding-left: 20px;
+        padding-right: 20px;
+        row-gap: 4px;
+    }
+    .main-cards-card-pic{
+        width: 100%;
+    }
 }

@@ -116,6 +116,76 @@
     padding-bottom: 3px;
     padding-left: 3px;
 }
+.overlay {
+    background: #200d1da2;
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding-left: 300px;
+    padding-right: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 200px;
+}
+.modal {
+    background: #FFF2FD;
+    border-top-left-radius: 30%;
+    border-bottom-right-radius: 30%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 62px 30px;
+    height: 80vh;
+}
+.modal-close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+.modal-logo {
+    width: 132px;
+    height: 132px;
+    border-radius: 50%;
+}
+.modal-info {
+    display: flex;
+    justify-content: space-between;
+}
+.modal-info-poster {
+    width: 40%;
+}
+.modal-info-data {
+    width: 50%;
+}
+.modal-info-data-title {
+    color: var(--pink);
+    font-size: 24px;
+    font-family: "Montserrat", sans-serif;
+}
+.info {
+}
+.modal-info-data-subtitle {
+}
+.when {
+}
+.where {
+}
+.who {
+}
+.prices {
+}
+.barcode {
+}
+.modal-info-data-buy {
+}
+.modal-more {
+}
 
 @media (max-width:1024px){
     .main{

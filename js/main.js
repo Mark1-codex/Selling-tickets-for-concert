@@ -1,4 +1,7 @@
 const cardSpace = document.querySelector('.main-cards')
+const modalAppear = document.querySelector('.overlay')
+const closeModal = document.querySelector('.modal-close')
+modalAppear.style.display = "none"
 for (let i = 0; i < 40; i++) {
     cardSpace.innerHTML+=`
       <ul class="main-cards-card">
@@ -12,3 +15,18 @@ for (let i = 0; i < 40; i++) {
                 </ul>
     `
 }
+const card = document.querySelectorAll('.main-cards-card')
+card.forEach(element => {
+ element.addEventListener('click', () => {
+    modalAppear.style.display = "flex"
+ })    
+})
+closeModal.addEventListener('click', () => {
+    modalAppear.style.display = "none"
+})
+document.addEventListener('keydown', (event) => {
+    console.log(event.key)
+    if(event.key == 'Escape'){
+        modalAppear.style.display = "none"
+    }
+})

@@ -1,3 +1,5 @@
+import {getEventApi} from './js/api.js'
+console.log(getEventApi)
 const cardSpace = document.querySelector('.main-cards')
 const modalAppear = document.querySelector('.overlay')
 const closeModal = document.querySelector('.modal-close')

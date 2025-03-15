@@ -1,22 +1,69 @@
-import {getEventApi} from './js/api.js'
-console.log(getEventApi)
-const cardSpace = document.querySelector('.main-cards')
+// api - start
+const getEventApi = async (keyword) => {
+    if (keyword === "" || keyword === undefined || keyword === null){
+        try {
+            const result = await fetch(`https://app.ticketmaster.com/discovery/v2/events.json?apikey=RKwTp5P44ztFFCbPCDFoxyCASf3hPfPS&size=20&page=1`).then((data) => {
+                return data.json();
+            });
+            return result;
+        } catch (error) {
+            return error;
+        }
+    } else {
+        try {
+            const result = await fetch(`https://app.ticketmaster.com/discovery/v2/events.json?apikey=RKwTp5P44ztFFCbPCDFoxyCASf3hPfPS&size=20&page=1&keyword=${keyword}`).then((data) => {
+                return data.json();
+            });
+            return result;
+        } catch (error) {
+            return error;
+        }
+    }
+};
+// api - end
+getEventApi()
+getEventApi().then((data) => {
+    createMarkup(data._embedded)
+});
+// show card - start
+const list = document.querySelector(".main");
+
+ function createMarkup(arr) {
+    console.log(arr)
+    const html = arr.events.map((item) => {
+        console.log(item)
+        return `<div class="main-cards-card">
+                     <div class="main__style-div"></div>
+                     <img class="main-cards-card-pic" src="${item.images[0].url}" alt="poster"/>
+                     <h2 class="main-cards-card-title">${item.name}</h2>
+<span class="main-cards-card-location-content">${item.locale}</span>
+                   </div>`;
+    }).join("");
+
+    list.innerHTML = html;
+}
+function searcPost() {
+    const keyWord = searcInput.value;
+
+    getEventApi(keyWord).then((data) => {
+        createMarkup(data._embedded)
+    });
+}
+const searcInput = document.querySelector(".header-search-ticket");
+
+searcInput.addEventListener("input", _.debounce(() => {
+    searcPost()
+}, 500));
+
+
+// enter input - end
+
+
+
+// const cardSpace = document.querySelector('.main-cards')
 const modalAppear = document.querySelector('.overlay')
 const closeModal = document.querySelector('.modal-close')
 modalAppear.style.display = "none"
-for (let i = 0; i < 40; i++) {
-    cardSpace.innerHTML+=`
-      <ul class="main-cards-card">
-                    <img src="/images/print-photo.png" alt="" class="main-cards-card-pic">
-                    <h3 class="main-cards-card-title">Eurovision 2021 finals!</h3>
-                    <h4 class="main-cards-card-data">2021-05-13</h4>
-                    <div class="main-cards-card-location">
-                        <img src="/images/geo.svg" alt="" class="main-cards-card-location-image">
-                        <h5 class="main-cards-card-location-content">Palace of Ukraine</h5>
-                    </div>
-                </ul>
-    `
-}
 const card = document.querySelectorAll('.main-cards-card')
 card.forEach(element => {
  element.addEventListener('click', () => {

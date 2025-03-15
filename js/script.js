@@ -27,10 +27,10 @@ getEventApi().then((data) => {
 });
 // show card - start
 const list = document.querySelector(".main");
-
- function createMarkup(arr) {
+let cards 
+ async function createMarkup(arr) {
     console.log(arr)
-    const html = arr.events.map((item) => {
+    const html = await arr.events.map((item) => {
         console.log(item)
         return `<div class="main-cards-card">
                      <div class="main__style-div"></div>
@@ -39,8 +39,29 @@ const list = document.querySelector(".main");
 <span class="main-cards-card-location-content">${item.locale}</span>
                    </div>`;
     }).join("");
+    
 
     list.innerHTML = html;
+    cards = document.querySelectorAll('.main-cards-card')
+  
+    const modalAppear = document.querySelector('.overlay')
+const closeModal = document.querySelector('.modal-close')
+modalAppear.style.display = "none"
+cards.forEach(element => {
+ element.addEventListener('click', () => {
+    modalAppear.style.display = "flex"
+ })    
+})
+closeModal.addEventListener('click', () => {
+    modalAppear.style.display = "none"
+})
+document.addEventListener('keydown', (event) => {
+    console.log(event.key)
+    if(event.key == 'Escape'){
+        modalAppear.style.display = "none"
+    }
+})
+console.log(cards)
 }
 function searcPost() {
     const keyWord = searcInput.value;
@@ -61,21 +82,5 @@ searcInput.addEventListener("input", _.debounce(() => {
 
 
 // const cardSpace = document.querySelector('.main-cards')
-const modalAppear = document.querySelector('.overlay')
-const closeModal = document.querySelector('.modal-close')
-modalAppear.style.display = "none"
-const card = document.querySelectorAll('.main-cards-card')
-card.forEach(element => {
- element.addEventListener('click', () => {
-    modalAppear.style.display = "flex"
- })    
-})
-closeModal.addEventListener('click', () => {
-    modalAppear.style.display = "none"
-})
-document.addEventListener('keydown', (event) => {
-    console.log(event.key)
-    if(event.key == 'Escape'){
-        modalAppear.style.display = "none"
-    }
-})
+
+

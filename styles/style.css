@@ -1,6 +1,9 @@
 @import '/styles/reset.css';
 @import '/styles/colors.css';
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    font-family: "Montserrat", sans-serif;
+}
 .page-wrapper {
     background: black;
     min-height: 100vh;
@@ -195,7 +198,22 @@
 }
 .modal-more {
 }
-
+.footer-pagination{
+    display: flex;
+    justify-content: center;
+}
+.footer-pagination-page{
+    color: white;
+    padding: 5px 12px;
+    cursor: pointer;
+}
+.active-page{
+    color: var(--pink);
+    padding: 5px 12px;
+    border: 1px solid var(--pink);
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
 @media (max-width:1024px){
     .main{
         padding-left: 85px;

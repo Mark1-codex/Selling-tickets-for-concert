@@ -1,9 +1,6 @@
 @import '/styles/reset.css';
 @import '/styles/colors.css';
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-*{
-    font-family: "Montserrat", sans-serif;
-}
 .page-wrapper {
     background: black;
     min-height: 100vh;
@@ -198,14 +195,15 @@
 }
 .modal-more {
 }
-.footer-pagination{
-    display: flex;
+.footer-pagination {
+    display: flex; 
     justify-content: center;
 }
-.footer-pagination-page{
+.footer-pagination-page {
     color: white;
     padding: 5px 12px;
     cursor: pointer;
+    font-family: "Montserrat", sans-serif;
 }
 .active-page{
     color: var(--pink);

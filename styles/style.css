@@ -69,6 +69,21 @@
     top: 13px;
     right: 18px;
 }
+.select{
+    right: 1px;
+    width: 200px;
+    height: 32px;
+    background: transparent;
+    border-radius: 20px;
+    padding-left: 10px;
+    color: var(--grey);
+    background: rgba(255, 255, 255, 0.200);
+    backdrop-filter: blur(20px);
+}
+select:focus-visible{
+    fill: none;
+    outline: none;
+}
 .main {
     padding-right: 115px;
     padding-left: 115px;
@@ -205,4 +220,68 @@
     padding: 5px 12px;
     cursor: pointer;
     font-family: "Montserrat", sans-serif;
+}
+.active-page{
+    color: var(--pink);
+    padding: 5px 12px;
+    border: 1px solid var(--pink);
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+@media (max-width:1024px){
+    .main{
+        padding-left: 85px;
+        padding-right: 85px;
+    }
+    .main-cards{
+        column-gap: 27px;
+    }
+    .main-cards-card{
+        width: 27%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .header-title{
+        font-size: 30px;
+    }
+    .header-logo{
+        width: 140px;
+    }
+    .header{
+        padding: 40px 100px 123px;
+    }
+}
+@media (max-width:768px) {
+    .header-search{
+        display: flex;
+        flex-direction: column;
+        row-gap: 25px;
+    }
+    .header, .main{
+        padding: 25px;
+    }
+    .header-search-ticket, .header-search-country{
+        width: 80vw;
+    }
+    .header-title{
+        width: auto;
+        font-size: 18px;
+    }
+    .header-logo{
+        width: 80px;
+    }
+}
+@media (max-width:600px){
+    .main-cards-card{
+        width: 45%;
+    }
+    .main-cards{
+        padding-left: 20px;
+        padding-right: 20px;
+        row-gap: 4px;
+    }
+    .main-cards-card-pic{
+        width: 100%;
+    }
 }

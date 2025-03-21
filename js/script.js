@@ -65,12 +65,14 @@ const modalAppear = document.querySelector('.overlay')
 const closeModal = document.querySelector('.modal-close')
 const cardPic = document.querySelector('.main-cards-card-pic')
 const modalPic = document.querySelector('.modal-info-poster')
+const modalLogo = document.querySelector('.modal-logo')
 modalAppear.style.display = "none"
 cards.forEach(element => {
  element.addEventListener('click', () => {
     let poster = element.firstElementChild.src
     modalPic.src = poster
     cardPic.src = poster
+    modalLogo.src = poster
     modalAppear.style.display = "flex"
 
  })    
